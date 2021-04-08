@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  reconocimiento:
+    build: .
+    command: python3 server.py
+    container_name: reconocimento
+    ports:
+      - "84:8080"
+    volumes:
+      - type: bind
+        source: ./datos/uploads
+        target: /uploads
